@@ -1,4 +1,6 @@
 export function didUserWin(player, computer) {
+    console.log(player, computer);
+    
     // player
     // rock, paper, scissors
     // 
