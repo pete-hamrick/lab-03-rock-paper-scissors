@@ -5,6 +5,7 @@ const playButton = document.getElementById('play-button');
 const winsSpan = document.getElementById('total-wins');
 const lossesSpan = document.getElementById('total-losses');
 const drawsSpan = document.getElementById('total-draws');
+const showResults = document.getElementById('show-results');
 
 // initialize state
 let wins = 0;
@@ -27,7 +28,21 @@ playButton.addEventListener('click', () => {
     } else if (randomNum === 3) {
         computerChoice = 'scissors';
     }
-    console.log(computerChoice);
+    const result = didUserWin(userChoice, computerChoice);
+
+    if (result === 'draw') {
+        showResults.textContent = `The Computer picked ${computerChoice}, it is a Draw`;
+        draws++;
+    } else if (result === 'loss') {
+        showResults.textContent = `The Computer picked ${computerChoice}, you Lost, try again!`;
+        losses++;
+    } else if (result === 'win') {
+        showResults.textContent = `The Computer picked ${computerChoice}, you Won!`;
+        wins++;
+    }
+    winsSpan.textContent = wins;
+    lossesSpan.textContent = losses;
+    drawsSpan.textContent = draws;
 
 
 

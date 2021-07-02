@@ -14,20 +14,5 @@ export function didUserWin(userChoice, computerChoice) {
         return 'win';
     } else if (userChoice === 'rock' && computerChoice === 'scissors') {
         return 'win';
-    }
-    // player
-    // rock, paper, scissors
-    // 
-    // computer 
-    // rock paper scissors
-    // 
-    // if the userThrow is the same as the computerThrow
-    //   returnows rock
-    //    if computerThrow is scissors return 'win'
-    // if the user throws paper
-    //    if computerThrow is rock return 'win'
-    // if the user throw scissors
-    //    if computerThrow is paper return 'win'
-    // return 'lose'    
-    
+    }   
 }
