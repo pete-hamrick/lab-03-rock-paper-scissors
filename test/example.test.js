@@ -3,10 +3,44 @@
 import { didUserWin } from '../utils.js';
 const test = QUnit.test;
 
+test('testing a draw', (expect) => {
+    //Arrange
+    // Set up your arguments and expectations
+    const expected = 'draw';
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const draw1 = didUserWin('rock', 'rock');
+    const draw2 = didUserWin('paper', 'paper');
+    const draw3 = didUserWin('scissors', 'scissors');
+
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.equal(draw1, expected);
+    expect.equal(draw2, expected);
+    expect.equal(draw3, expected);
+});
+
+test('testing user loss', (expect) => {
+    //Arrange
+    // Set up your arguments and expectations
+    const expected = 'loss';
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const loss1 = didUserWin('rock', 'paper');
+    const loss2 = didUserWin('paper', 'scissors');
+    const loss3 = didUserWin('scissors', 'rock');
+    
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.equal(loss1, expected);
+    expect.equal(loss2, expected);
+    expect.equal(loss3, expected);
+});
+
 test('testing user win', (expect) => {
     //Arrange
     // Set up your arguments and expectations
-        
+    const expected = 'win';   
     //Act 
     // Call the function you're testing and set the result to a const
     const win1 = didUserWin('rock', 'scissors');
@@ -15,41 +49,7 @@ test('testing user win', (expect) => {
 
     //Expect
     // Make assertions about what is expected versus the actual result
-    expect.equal(win1, true);
-    expect.equal(win2, true);
-    expect.equal(win3, true);
-});
-
-test('testing user loss', (expect) => {
-    //Arrange
-    // Set up your arguments and expectations
-    
-    //Act 
-    // Call the function you're testing and set the result to a const
-    const loss1 = didUserWin('rock', 'paper');
-    const loss2 = didUserWin('paper', 'scissors');
-    const loss3 = didUserWin('scissors', 'rock');
-
-    //Expect
-    // Make assertions about what is expected versus the actual result
-    expect.equal(loss1, true);
-    expect.equal(loss2, true);
-    expect.equal(loss3, true);
-});
-
-test('testing a draw', (expect) => {
-    //Arrange
-    // Set up your arguments and expectations
-    
-    //Act 
-    // Call the function you're testing and set the result to a const
-    const draw1 = didUserWin('rock', 'paper');
-    const draw2 = didUserWin('paper', 'scissors');
-    const draw3 = didUserWin('scissors', 'rock');
-
-    //Expect
-    // Make assertions about what is expected versus the actual result
-    expect.equal(draw1, true);
-    expect.equal(draw2, true);
-    expect.equal(draw3, true);
+    expect.equal(win1, expected);
+    expect.equal(win2, expected);
+    expect.equal(win3, expected);
 });
